@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<div id="wrapper">
 	<div class="container">
 		<div id='submitContent'>
 			<!--<span class="glyphicon glyphicon-pause" id="pause"></span>-->
@@ -80,10 +81,11 @@
 				</div>
 				</div>
 			</form>
-		</main>
-		<footer>
+			<footer>
 			<p>Moodtunes is a site made by <a href="http://mylesmalloy.com/">Myles Malloy</a> as a school project in 2015. All music was created by Myles using GarageBand.</p>
 		</footer>
+		</main>
+	</div>
 	</div>
 <script>
 
