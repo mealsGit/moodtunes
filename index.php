@@ -16,6 +16,16 @@
 </head>
 
 <body>
+<div id="mood-colors">
+<div id="aquasplash" class="mood-color">
+</div>
+<div id="bloodred" class="mood-color">
+</div>
+<div id="spacedust" class="mood-color">
+</div>
+<div id="dawnlight" class="mood-color">
+</div>
+</div>
 <div id="wrapper">
 	<div class="container">
 		<div id='submitContent'>
@@ -40,7 +50,7 @@
 
 		<main>
 			<div class="row">
-			<div class="col-md-12"><h4>Select the musical attributes you would like to hear and press the 'Get My Tune!' button below!</h4>
+			<div class="col-md-12"><h4>Select the musical attributes you would like to hear and press the 'Get My Tune!' button below (<strong>audio warning</strong>)!</h4>
 			</div>
 			
         	<form id="tuneOptions">
