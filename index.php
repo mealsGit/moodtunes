@@ -152,6 +152,7 @@ function get_selection () {
         document.getElementById('tuneLink').src = music.link
         audio.load()
 		audio.play()
+		
 		  
     }
     xhr.send();
