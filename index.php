@@ -17,14 +17,14 @@
 
 <body>
 <div id="mood-colors">
-<div id="aquasplash" class="mood-color">
-</div>
-<div id="bloodred" class="mood-color">
-</div>
-<div id="spacedust" class="mood-color">
-</div>
-<div id="dawnlight" class="mood-color">
-</div>
+	<div id="aquasplash" class="mood-color show">
+	</div>
+	<div id="bloodred" class="mood-color">
+	</div>
+	<div id="spacedust" class="mood-color">
+	</div>
+	<div id="dawnlight" class="mood-color">
+	</div>
 </div>
 <div id="wrapper">
 	<div class="container">
@@ -160,6 +160,24 @@ function get_selection () {
         document.getElementById('tuneTitle').innerHTML = music.title
         var audio = document.getElementById('audiotrack')
         document.getElementById('tuneLink').src = music.link
+		function hideAll(){
+			$(".mood-color").each(function(){
+				if ($(this).hasClass('show')) {
+					$(this).removeClass('show');
+				}
+			});
+		};
+		hideAll();
+		$title = music.title;
+		if ($title == "Haste" || $title == "PR" || $title == "Bass Sick" || $title == "Trips") {
+			$("#aquasplash").addClass("show");
+		} else if ($title == "Demon Day" || $title == "Dimensia" || $title == "Bowels" || $title == "The Weight") {
+			$("#bloodred").addClass("show");
+		}else if (music.title == "Astral" || $title == "Flamingo Away" || $title == "Finger Dance" || $title == "Drift") {
+			$("#spacedust").addClass("show");
+		} else {
+			$("#dawnlight").addClass("show");
+		}
         audio.load()
 		audio.play()
 		

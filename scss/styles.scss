@@ -122,9 +122,10 @@ div#wrapper {
 	width:100%;
 	transition:.5s;
 	z-index:-1;
-}
-.mood-color:not(:first-of-type) {
 	opacity:0;
+}
+.mood-color.show {
+	opacity:1;
 }
 
 #aquasplash {
@@ -136,7 +137,7 @@ div#wrapper {
 }
 
 #spacedust {
-	background:linear-gradient(230deg, #ff1390, #11c78d);
+	background:linear-gradient(230deg, #11c78d, #ff1390);
 }
 
 #dawnlight {
