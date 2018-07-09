@@ -21,7 +21,6 @@ body {
 	min-height:100vh;
 	height:100%;
 	display:flex;
-	transition:.9s;
 }
 
 header div {
@@ -115,19 +114,33 @@ div#wrapper {
 	padding:15px 0;
 }
 
-.aquasplash {
+.mood-color {
+	position:absolute;
+	top:0;
+	min-height:100vh;
+	height:100%;
+	width:100%;
+	transition:.5s;
+	z-index:-1;
+	opacity:0;
+}
+.mood-color.show {
+	opacity:1;
+}
+
+#aquasplash {
 	background:linear-gradient(230deg, #02ef97, #0364c7);
 }
 
-.bloodred {
+#bloodred {
 	background:linear-gradient(230deg, #e41818, #000000);
 }
 
-.spacedust {
+#spacedust {
 	background:linear-gradient(230deg, #11c78d, #ff1390);
 }
 
-.dawnlight {
+#dawnlight {
 	background:linear-gradient(230deg, #ef26ed, #ffed10);
 }
 
@@ -213,7 +226,6 @@ footer {
 }
 @media all and (max-width:550px), all and (max-height:750px){
 	body {
-		display:block;
 		height:auto;
 	}
 	h3 {

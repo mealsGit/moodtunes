@@ -16,6 +16,16 @@
 </head>
 
 <body>
+<div id="mood-colors">
+	<div id="aquasplash" class="mood-color show">
+	</div>
+	<div id="bloodred" class="mood-color">
+	</div>
+	<div id="spacedust" class="mood-color">
+	</div>
+	<div id="dawnlight" class="mood-color">
+	</div>
+</div>
 <div id="wrapper">
 	<div class="container">
 		<div id='submitContent'>
@@ -115,7 +125,6 @@ var randomVal = booleanArray[0];
 
 var selected_option = ($('#key option:selected').val());
 
-
 function checkValue(){
 	//if ((tuneOptions.volume.value=='none') || (tuneOptions.tempo.value=='none') || (tuneOptions.complexity.value=='none') || (tuneOptions.key.value=='none'))
 		$( "#tuneOptions select").each(function() {
@@ -150,22 +159,27 @@ function get_selection () {
         document.getElementById('tuneTitle').innerHTML = music.title
         var audio = document.getElementById('audiotrack')
         document.getElementById('tuneLink').src = music.link
+		function hideAll(){
+			$(".mood-color").each(function(){
+				if ($(this).hasClass('show')) {
+					$(this).removeClass('show');
+				}
+			});
+		};
+		hideAll();
 		$title = music.title;
-		$currentClass = $("body").attr("class");
-		if ($currentClass != $title) {
-			$("body").removeClass($currentClass);
-		}
 		if ($title == "Haste" || $title == "PR" || $title == "Bass Sick" || $title == "Trips") {
-			$("body").addClass("aquasplash");
+			$("#aquasplash").addClass("show");
 		} else if ($title == "Demon Day" || $title == "Dimensia" || $title == "Bowels" || $title == "The Weight") {
-			$("body").addClass("bloodred");
+			$("#bloodred").addClass("show");
 		}else if (music.title == "Astral" || $title == "Flamingo Away" || $title == "Finger Dance" || $title == "Drift") {
-			$("body").addClass("spacedust");
+			$("#spacedust").addClass("show");
 		} else {
-			$("body").addClass("dawnlight");
+			$("#dawnlight").addClass("show");
 		}
         audio.load()
-		audio.play()	
+		audio.play()
+		
 		  
     }
     xhr.send();
@@ -230,7 +244,16 @@ function player() {
 }
 //pauseButton.addEventListener("click", pauser);
 
-
+jQuery(document).ready(function ($) { 
+	function setBackgroundHeight(){
+		$bodyHeight = $("body").height();
+		$(".mood-color").height($bodyHeight);
+	}
+	setBackgroundHeight();
+	$(window).resize(function() {
+		setBackgroundHeight();
+	});
+});
 </script>
 
 </body>

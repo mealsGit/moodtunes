@@ -125,7 +125,6 @@ var randomVal = booleanArray[0];
 
 var selected_option = ($('#key option:selected').val());
 
-
 function checkValue(){
 	//if ((tuneOptions.volume.value=='none') || (tuneOptions.tempo.value=='none') || (tuneOptions.complexity.value=='none') || (tuneOptions.key.value=='none'))
 		$( "#tuneOptions select").each(function() {
@@ -245,7 +244,16 @@ function player() {
 }
 //pauseButton.addEventListener("click", pauser);
 
-
+jQuery(document).ready(function ($) { 
+	function setBackgroundHeight(){
+		$bodyHeight = $("body").height();
+		$(".mood-color").height($bodyHeight);
+	}
+	setBackgroundHeight();
+	$(window).resize(function() {
+		setBackgroundHeight();
+	});
+});
 </script>
 
 </body>
